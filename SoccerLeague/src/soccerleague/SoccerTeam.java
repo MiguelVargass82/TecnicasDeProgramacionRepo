@@ -152,6 +152,7 @@ public class SoccerTeam {   //This class conteins de soccer team for colombian f
 
   public static void playMatchManual(SoccerTeam team1, SoccerTeam team2, int goals1 , int goals2){  //This methods play a match and change the atributes from each object
     
+      
      team1.setGoalsWin(team1.getGoalsWin()+goals1);       //Put de goals
      team2.setGoalsWin(team2.getGoalsWin()+goals2);
         

@@ -45,6 +45,7 @@ public class ManualFrame extends javax.swing.JFrame {
         goalsteam1tf = new javax.swing.JTextField();
         goalsteam2tf = new javax.swing.JTextField();
         acceptBtn = new javax.swing.JButton();
+        backbtn = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -80,6 +81,13 @@ public class ManualFrame extends javax.swing.JFrame {
             }
         });
 
+        backbtn.setText("Back");
+        backbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,7 +96,8 @@ public class ManualFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addComponent(backbtn)
+                .addGap(22, 22, 22)
                 .addComponent(team1lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,7 +128,8 @@ public class ManualFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(team2lbl)
                     .addComponent(team1lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -147,12 +157,22 @@ public class ManualFrame extends javax.swing.JFrame {
         this.list1 = list1;
         this.list2 = list2;
     }
+    
+      
+    ManualFrame frame0;
+    
+     public void setForm(ManualFrame form){      //Funtion for send the instance to the other form
+    this.frame0=form;
+    }
+   
+    
+    
 
 //This funtion return a boolean and help us to know if the string can be a integer number
     public boolean verifyText(String text1, String text2) {
-        boolean flat = true;
-        try {   //Happy case
-            // try to convert the string in integer
+        boolean flat = true;                          
+        try {  
+            // try to convert the string in integer            
             int number1 = Integer.parseInt(text1);
             int number2 = Integer.parseInt(text2);
             if(number1<0 || number2<0){ //Range validation
@@ -271,6 +291,13 @@ public class ManualFrame extends javax.swing.JFrame {
         //End accept buttom event
     }//GEN-LAST:event_acceptBtnActionPerformed
 
+    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+        FirstFrame frame1= new FirstFrame();
+        frame1.setVisible(true);
+        frame0.dispose();
+        
+    }//GEN-LAST:event_backbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -308,6 +335,7 @@ public class ManualFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton acceptBtn;
+    private javax.swing.JButton backbtn;
     private javax.swing.JTextField goalsteam1tf;
     private javax.swing.JTextField goalsteam2tf;
     private javax.swing.JLabel jLabel1;
