@@ -15,7 +15,7 @@ public class TableFrame extends javax.swing.JFrame {
       
     
     
-     private SoccerTeam [] list1;
+     private SoccerTeam [] list1;   //Methon for transport de dates of a frame to other
     public void setDato(SoccerTeam [] list){
     this.list1=list;
     }
@@ -30,8 +30,7 @@ public class TableFrame extends javax.swing.JFrame {
      //Creates new form TableFrame    
     public TableFrame() {       //Main
         initComponents();
-       
-     
+         
     }
 
     /**
@@ -67,7 +66,7 @@ public class TableFrame extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Posiciones", "Equipo", "Partidos Jugados", "Partidos Ganados", "Partidos perdidos", "Goles en Anotados", "Goles en Contra"
+                "Posiciones", "Equipo", "Partidos Jugados", "Partidos Ganados", "Partidos Perdidos", "Goles Anotados", "Goles en Contra"
             }
         ));
         jScrollPane1.setViewportView(positionTable);
@@ -125,30 +124,23 @@ public class TableFrame extends javax.swing.JFrame {
    
     private void pruebaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pruebaBtnActionPerformed
          DefaultTableModel table = new DefaultTableModel();
-         
-         /*
-        for (int i =0; i<8;i++){
-            System.out.println("-----------------------");
-            System.out.println(list1[i].getName());      
-        }
-        */     
-         
-         table.addColumn("Índice");
-    table.addColumn("Nombre");
-    table.addColumn("Partidos Jugados");
-    table.addColumn("Partidos Ganados");
-    table.addColumn("Partidos Perdidos");
-    table.addColumn("Goles a favor");
-    table.addColumn("Goles en contra");
+             
+    table.addColumn("Position");          //Add de columns names to the model
+    table.addColumn("Team");
+    table.addColumn("games played");
+    table.addColumn("matches won");
+    table.addColumn("lost matches");
+    table.addColumn("Goals in favor");
+    table.addColumn("goals against");
     table.addColumn("Points");
     
     
         int position =1;
-        int anterior=0;
-         for  (int i = 0;i<19;i++){
+     //   int anterior=0;
+         for  (int i = 0;i<19;i++){     //Add for each row the respectives dates to the model
                      table.addRow(new Object[]{
             position,
-            list1[i].getName(),
+            list1[i].getName(), 
             list1[i].getMatchsPlayed(),
             list1[i].getWinMatch(),
             list1[i].getLoseMatch(),
@@ -160,13 +152,14 @@ public class TableFrame extends javax.swing.JFrame {
              position++;        
              }                                           
                 }    
-              positionTable.setModel(table);
+              positionTable.setModel(table);    //Vinculate the model with the table
+      
               
-              String winner = list1[0].getName();
-              
-              
+              String winner = list1[0].getName();                   //Winner message
          winnerlbl.setText("The winner of the Colombian soccer league is                                 !!" );
          winnerrlbl.setText(winner);
+         
+         //End seeResultButtom event
     }//GEN-LAST:event_pruebaBtnActionPerformed
 
     /**

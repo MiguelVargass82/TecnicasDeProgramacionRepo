@@ -24,17 +24,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="autoGameBtn" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="185" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" pref="185" max="-2" attributes="0"/>
               <EmptySpace pref="107" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="autoGameBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="ManualGameBtn" min="-2" pref="154" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,7 +43,10 @@
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" pref="54" max="-2" attributes="0"/>
               <EmptySpace pref="93" max="32767" attributes="0"/>
-              <Component id="autoGameBtn" min="-2" pref="53" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="autoGameBtn" pref="53" max="32767" attributes="0"/>
+                  <Component id="ManualGameBtn" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -62,6 +64,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="autoGameBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ManualGameBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manual Game"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ManualGameBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

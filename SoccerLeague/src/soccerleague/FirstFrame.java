@@ -18,7 +18,7 @@ public class FirstFrame extends javax.swing.JFrame {
      * Creates new form FirstFrame
      */
     public FirstFrame() {
-        initComponents();
+        initComponents();      
     }
 
     /**
@@ -32,6 +32,7 @@ public class FirstFrame extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         autoGameBtn = new javax.swing.JButton();
+        ManualGameBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,19 +45,27 @@ public class FirstFrame extends javax.swing.JFrame {
             }
         });
 
+        ManualGameBtn.setText("Manual Game");
+        ManualGameBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManualGameBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(autoGameBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(108, 108, 108)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(107, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(autoGameBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ManualGameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,7 +73,9 @@ public class FirstFrame extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(autoGameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(autoGameBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                    .addComponent(ManualGameBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(73, 73, 73))
         );
 
@@ -73,14 +84,12 @@ public class FirstFrame extends javax.swing.JFrame {
 
     
     
-    
+//----------------------Buttom Events----------------------------------------
     
     
     private void autoGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autoGameBtnActionPerformed
-        //Buttom Auto Event
-        
-        
-       
+        //Buttom AutoGame Event
+           
         SoccerTeam team1 = new SoccerTeam("Alianza FC");
         SoccerTeam team2 = new SoccerTeam("America de Cali");
         SoccerTeam team3 = new SoccerTeam("Atletico Bucaramanga");
@@ -130,6 +139,44 @@ public class FirstFrame extends javax.swing.JFrame {
     //End AUTO BUTTOM EVENT
     }//GEN-LAST:event_autoGameBtnActionPerformed
 
+    private void ManualGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManualGameBtnActionPerformed
+        //Manual Game buttom event
+          SoccerTeam team1 = new SoccerTeam("Alianza FC");
+        SoccerTeam team2 = new SoccerTeam("America de Cali");
+        SoccerTeam team3 = new SoccerTeam("Atletico Bucaramanga");
+        SoccerTeam team4 = new SoccerTeam("Chico");
+        SoccerTeam team5 = new SoccerTeam("Deportivo Pereira");
+        SoccerTeam team6 = new SoccerTeam("Envigado");
+        SoccerTeam team7 = new SoccerTeam("Fortaleza");
+        SoccerTeam team8 = new SoccerTeam("Jaguares FC");
+        SoccerTeam team9 = new SoccerTeam("Junior");
+        SoccerTeam team10 = new SoccerTeam("La Equidad");
+        SoccerTeam team11 = new SoccerTeam("Medellin");
+        SoccerTeam team12 = new SoccerTeam("Millonarios");
+        SoccerTeam team13 = new SoccerTeam("Nacional");
+        SoccerTeam team14 = new SoccerTeam("Once Caldas");
+        SoccerTeam team15 = new SoccerTeam("Pasto");
+        SoccerTeam team16 = new SoccerTeam("Patriotas");
+        SoccerTeam team17 = new SoccerTeam("Rionegro");
+        SoccerTeam team18 = new SoccerTeam("Santa Fe");
+        SoccerTeam team19 = new SoccerTeam("Tolima");
+        SoccerTeam team20 = new SoccerTeam("Deportivo Cali");
+        
+            //List with every team
+        SoccerTeam list1 [] = {team1,team2,team3,team4,team5,team6,team7,team8,team9,team10,team11,team12,team13,team14,team15,team16,team17,team18,team19,team20};
+         SoccerTeam list2 [] = {team1,team2,team3,team4,team5,team6,team7,team8,team9,team10,team11,team12,team13,team14,team15,team16,team17,team18,team19,team20};
+  
+        ManualFrame frameM = new ManualFrame();
+        
+        frameM.setDato(list1, list2);  //Transpost the two lists
+    
+        frameM.setVisible(true);
+   
+        frame1.dispose();
+
+        //END manual buttom event
+    }//GEN-LAST:event_ManualGameBtnActionPerformed
+
     
     
     
@@ -155,9 +202,9 @@ public class FirstFrame extends javax.swing.JFrame {
     
     
     
+    //-------DONT TOUCH----------------------------------------------------------------------
     
-    
-    
+      static FirstFrame frame1 = new FirstFrame();       //My own instance of the frame 1
     /**
      * @param args the command line arguments
      */
@@ -185,15 +232,16 @@ public class FirstFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form */       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FirstFrame().setVisible(true);
+                 frame1.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ManualGameBtn;
     private javax.swing.JButton autoGameBtn;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

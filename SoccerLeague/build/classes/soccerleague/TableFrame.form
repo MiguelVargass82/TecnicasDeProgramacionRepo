@@ -95,8 +95,8 @@
                 <Column editable="true" title="Equipo" type="java.lang.Object"/>
                 <Column editable="true" title="Partidos Jugados" type="java.lang.Object"/>
                 <Column editable="true" title="Partidos Ganados" type="java.lang.Object"/>
-                <Column editable="true" title="Partidos perdidos" type="java.lang.Object"/>
-                <Column editable="true" title="Goles en Anotados" type="java.lang.Object"/>
+                <Column editable="true" title="Partidos Perdidos" type="java.lang.Object"/>
+                <Column editable="true" title="Goles Anotados" type="java.lang.Object"/>
                 <Column editable="true" title="Goles en Contra" type="java.lang.Object"/>
               </Table>
             </Property>

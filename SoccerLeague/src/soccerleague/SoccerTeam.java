@@ -150,6 +150,38 @@ public class SoccerTeam {   //This class conteins de soccer team for colombian f
     }   //End method
 
 
+  public static void playMatchManual(SoccerTeam team1, SoccerTeam team2, int goals1 , int goals2){  //This methods play a match and change the atributes from each object
+    
+     team1.setGoalsWin(team1.getGoalsWin()+goals1);       //Put de goals
+     team2.setGoalsWin(team2.getGoalsWin()+goals2);
+        
+      team1.setGoalsLose(team1.getGoalsLose()+goals2);       //Put de goals losed
+      team2.setGoalsLose(team2.getGoalsLose()+goals1);
+     
+     
+     team1.setMatchsPlayed(team1.getMatchsPlayed()+1);      //Put the match played
+     team2.setMatchsPlayed(team2.getMatchsPlayed()+1);
+     
+     team1.addTeam(team2);
+     team2.addTeam(team1);      //Add the respective rival to the list
+     
+        
+        System.out.println(team1.getName()+" "+goals1+" "+team2.getName()+" "+goals2);
+     if(goals1==goals2){    //Tie
+     team1.setPoints(team1.getPoints()+1);      //Add only one point for each team
+     team2.setPoints(team2.getPoints()+1);
+     }
+     else if (goals1>goals2){   //Team1 win Team2
+     team1.setWinMatch(team1.getWinMatch()+1);
+     team1.setPoints(team1.getPoints()+3);
+     team2.setLoseMatch(team2.getLoseMatch()+1);
+     }
+     else{                                      //Team2 win Team1
+     team2.setWinMatch(team2.getWinMatch()+1);
+      team2.setPoints(team2.getPoints()+3);
+     team1.setLoseMatch(team1.getLoseMatch()+1);    
+     }     
+    }   //End method
     
     
     
